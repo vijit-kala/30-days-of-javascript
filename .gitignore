@@ -1,0 +1,7 @@
+# Ignoring all settings and config files.
+
+.vscode
+
+# Ignoring the unnecassary sound files.
+sound/
+*.wav
