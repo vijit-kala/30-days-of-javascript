@@ -1,6 +1,6 @@
 html {
     font-size: 12px;
-    background: url("/Day1_JS_DrumKit/img/background.jpg");
+    background: url("./img/background.jpg");
     background-size: cover;
 }
 
