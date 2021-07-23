@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Flex Panels 🔥</title>
+        <link
+            href="https://fonts.googleapis.com/css?family=Amatic+SC"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <link rel="stylesheet" href="./css/style.css" />
+    </head>
+    <body>
+        <div class="panels">
+            <div class="panel panel-1">
+                <p>Hey</p>
+                <p>Let's</p>
+                <p>Dance</p>
+            </div>
+            <div class="panel panel-2">
+                <p>Give</p>
+                <p>Take</p>
+                <p>Recieve</p>
+            </div>
+            <div class="panel panel-3">
+                <p>Experience</p>
+                <p>It</p>
+                <p>Today</p>
+            </div>
+            <div class="panel panel-4">
+                <p>Give</p>
+                <p>All</p>
+                <p>You Can</p>
+            </div>
+            <div class="panel panel-5">
+                <p>Life</p>
+                <p>In</p>
+                <p>Motion</p>
+            </div>
+        </div>
+
+        <script>
+            const panels = document.querySelectorAll(".panel");
+
+            function toggleOpen() {
+                //console.log("Hello");
+                this.classList.toggle("open");
+            }
+
+            function toggleActive(e) {
+                console.log(e.propertyName);
+                if (e.propertyName.includes("flex")) {
+                    this.classList.toggle("open-active");
+                }
+            }
+
+            panels.forEach((panel) =>
+                panel.addEventListener("click", toggleOpen)
+            );
+            panels.forEach((panel) =>
+                panel.addEventListener("transitionend", toggleActive)
+            );
+        </script>
+    </body>
+</html>
