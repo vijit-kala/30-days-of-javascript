@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Array Cardio 2 💪</title>
+    </head>
+    <body>
+        <p>Just look at the console 👇.</p>
+
+        <script>
+            // Array cardio 2.
+
+            const people = [
+                { name: "Wes", year: 1988 },
+                { name: "Kait", year: 1986 },
+                { name: "Irv", year: 1970 },
+                { name: "Lux", year: 2015 },
+            ];
+
+            const comments = [
+                { text: "Love this!", id: 523423 },
+                { text: "Super good", id: 823423 },
+                { text: "You are the best", id: 2039842 },
+                { text: "Ramen is my fav food ever", id: 123523 },
+                { text: "Nice Nice Nice!", id: 542328 },
+            ];
+
+            // 1. Array.prototype.some(key) =>
+            // This prints true even if only one person is >= 18.
+            console.log(
+                people.some(
+                    (person) => new Date().getFullYear() - person.year >= 18
+                )
+            );
+
+            // 2. Array.prototype.every(key) =>
+            // Will be true only if everyone is above 18.
+            console.log("Part 2:: \n");
+            console.log(
+                people.every(
+                    (person) => new Date().getFullYear() - person.year >= 18
+                )
+            );
+
+            // 3. Array.prototype.find() =>
+            // Find is like filter, but instead returns just the one you are looking for
+            // find the comment with the ID of 823423
+
+            // const comment = comments.find((comment) =>
+            //     comment.id === 823423 ? true : false
+            // );
+            // console.log(comment);
+            console.log("Part 3::\n");
+            console.log(comments.find((comment) => comment.id === 823423));
+
+            // 4. Array.prototype.findIndex() =>
+            // Find the comment with this ID
+            // delete the comment with the ID of 823423
+            const index = comments.findIndex(
+                (comment) => comment.id === 823423
+            );
+
+            // Two ways to delete:
+            // 1.
+            // comments.splice(index, 1);
+
+            // 2.
+            // Create a new array.
+            const newComments = [
+                ...comments.slice(0, index),
+                ...comments.slice(index + 1),
+            ];
+
+            console.log("Part 4::\n");
+            console.table(newComments);
+        </script>
+    </body>
+</html>
