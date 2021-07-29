@@ -2,6 +2,7 @@
 
 .vscode
 
-# Ignoring the unnecassary sound files.
+# Ignoring the unnecassary sound files, etc.
 sound/
 *.wav
+*.mp4
