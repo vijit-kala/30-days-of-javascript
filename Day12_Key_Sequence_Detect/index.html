@@ -5,8 +5,29 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Key Detection</title>
+        <script
+            type="text/javascript"
+            src="https://www.cornify.com/js/cornify.js"
+        ></script>
     </head>
     <body>
-        <script></script>
+        <script>
+            const pressedKeys = [];
+            const hiddenWord = "Vijit";
+
+            window.addEventListener("keyup", (e) => {
+                console.log(e.key);
+                pressedKeys.push(e.key);
+                pressedKeys.splice(
+                    -hiddenWord.length - 1,
+                    pressedKeys.length - hiddenWord.length
+                );
+                if (pressedKeys.join("".includes(hiddenWord))) {
+                    console.log("DING DONG!");
+                    cornify_add();
+                }
+                console.log(pressedKeys);
+            });
+        </script>
     </body>
 </html>
